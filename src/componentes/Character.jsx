@@ -3,7 +3,7 @@ function Character({ character }) {
     <div className="text-center p-5">
       <h4>{character.name}</h4>
       <div>
-        <img className="img-fluid rounded-pill" src={character.image} alt={Character.name} />
+        <img className="img-fluid rounded-pill " src={character.image} alt={Character.name} />
         <p>Estatus: {character.status}</p>
         <p>Especie: {character.species}</p>
         <p>Genero: {character.gender}</p>

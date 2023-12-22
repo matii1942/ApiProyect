@@ -4,9 +4,17 @@ import Character from "./Character";
 
 function NavPage(props) {
   return (
-    <div className="d-flex justify-content-between align-items-cemter">
-      <p>Pagina: {props.page}</p>
-      <button className="btn btn-primary btn-sm" onClick={() => props.setPage(props.page + 1)}>
+    <div className="d-flex justify-content-between align-items-center">
+      <button
+        className="btn btn-primary btn-sm"
+        onClick={() => props.setPage(props.page - 1)}
+      >
+        Pagina: {props.page - 1}
+      </button>
+      <button
+        className="btn btn-primary btn-sm"
+        onClick={() => props.setPage(props.page + 1)}
+      >
         Pagina: {props.page + 1}
       </button>
     </div>
@@ -19,7 +27,7 @@ function Characters() {
 
   useEffect(() => {
     async function fetchurl() {
-      const respuesta = await fetch(`https://rickandmortyapi.com/api/character?page=${page}` );
+      const respuesta = await fetch(`https://rickandmortyapi.com/api/character?page=${page}`);
       const data = await respuesta.json();
       setcharacter(data.results);
     }
@@ -39,7 +47,6 @@ function Characters() {
           );
         })}
       </div>
-
       <NavPage page={page} setPage={setPage} />
     </div>
   );
